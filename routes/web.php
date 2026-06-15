@@ -20,15 +20,15 @@ Route::post('/buku/bulk-delete', [BukuController::class, 'bulkDelete'])
     Route::get('/buku/export', [BukuController::class, 'export'])
      ->name('buku.export');
  
-// Resource route untuk Buku
-Route::resource('buku', BukuController::class);
- 
 // Custom route untuk filter kategori
 Route::get('/buku/kategori/{kategori}', [BukuController::class, 'filterKategori'])
     ->name('buku.kategori');
 
 Route::get('/buku/search', [BukuController::class, 'search'])
     ->name('buku.search');
+
+// Resource route untuk Buku
+Route::resource('buku', BukuController::class);
 
 // Resource route untuk Anggota (akan dibuat nanti)
 Route::resource('anggota', AnggotaController::class);
